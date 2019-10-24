@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: __dirname + '/src/js/index.tsx',
+    entry: __dirname + '/src/index.tsx',
     output: {
         path: __dirname + '/dist',
         filename: 'resume_bundle.js'

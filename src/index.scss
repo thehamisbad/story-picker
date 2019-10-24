@@ -1,0 +1,27 @@
+body {
+    background: green;
+    position: relative;
+    margin: 0;
+}
+
+.App-wrapper {
+    padding: 2em 1em 1em;
+
+    @media (min-width: 480px) {
+        padding: 2em 2em 1em;
+    }
+
+    @media (min-width: 640px) {
+        padding: 2em  3em 1em;
+    }
+
+    @media (min-width: 960px) {
+        padding: 1em  5em;
+    }
+
+    @media (min-width: 1120px) {
+        padding: 1em  rem;
+        display: flex;
+        justify-content: center;
+    }
+}
