@@ -9,6 +9,6 @@
         "resolveJsonModule": true,
     },
     "include": [
-        "./src/**/*"
+        "./client/**/*", "client/index.tsx", "client/App.tsx"
     ]
 }
