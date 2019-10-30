@@ -8,12 +8,20 @@ function mapStateToProps(state: GlobalState) {
     return {
         storyTypes: state.data.storyTypes,
         settings: state.data.settings,
+        plotPoints: state.data.plotPoints,
+        selectedStoryType: state.data.selectedStoryType,
+        selectedSetting: state.data.selectedSetting,
+        selectedPlotPoints: state.data.selectedPlotPoints,
     }
 }
 
 const mapDispatchToProps = {
     loadStoryTypes: operations.loadStoryTypes,
     loadSettings: operations.loadSettings,
+    loadPlotPoints: operations.loadPlotPoints,
+    selectStoryType: operations.selectStoryType,
+    selectSetting: operations.selectSetting,
+    selectPlotPoint: operations.selectPlotPoint,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoryPicker);

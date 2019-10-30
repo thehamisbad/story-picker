@@ -7,36 +7,60 @@ import './index.scss';
 export interface StoryPickerProps {
     storyTypes: string[];
     settings: string[];
+    plotPoints: string[];
+    selectedStoryType: string[];
+    selectedSetting: string[];
+    selectedPlotPoints: string[];
     loadStoryTypes: () => void;
     loadSettings: () => void;
+    loadPlotPoints: () => void;
+    selectStoryType: (storyType: string[]) => void;
+    selectSetting: (setting: string[]) => void;
+    selectPlotPoint: (plotPoint: string[]) => void;
 }
 
 class StoryPicker extends React.Component<StoryPickerProps> {
 
     componentDidMount() {
-        console.log('mounted');
         this.props.loadStoryTypes();
         this.props.loadSettings();
+        this.props.loadPlotPoints();
     }
 
     render () {
         return (
             <div className='App-wrapper'>
                 <div className='App'>
-                    <h1 className='App-title'>Story Generator</h1>
-                    <div className='Pickers'>
-                        <Picker
-                            title='Pick a Story Type'
-                            selected={ null }
-                            items={ this.props.storyTypes } 
-                            id='story-type-picker'
-                        />
-                        <Picker
-                            title='Pick a Setting'
-                            selected={ null }
-                            items={ this.props.settings } 
-                            id='setting-picker'
-                        />
+                    <div className='App-heading'>
+                        <h1 className='App-title'>Story Generator</h1>
+                    </div>
+                    <div className='App-storyPickers'>
+                        <div className='Pickers'>
+                            <Picker
+                                title='Pick a Story Type'
+                                selected={ this.props.selectedStoryType }
+                                upTo={ 1 }
+                                items={ this.props.storyTypes } 
+                                id='story-type-picker'
+                                choose={ this.props.selectStoryType }
+                            />
+                            <Picker
+                                title='Pick a Setting'
+                                selected={ this.props.selectedSetting }
+                                upTo={ 1 }
+                                items={ this.props.settings } 
+                                id='setting-picker'
+                                choose={ this.props.selectSetting }
+                            />
+                            <Picker
+                                title='Pick Plot Points'
+                                selected={ this.props.selectedPlotPoints }
+                                upTo={ 3 }
+                                items={ this.props.plotPoints } 
+                                id='plot-points-picker'
+                                choose={ this.props.selectPlotPoint }
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

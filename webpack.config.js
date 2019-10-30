@@ -4,7 +4,7 @@ module.exports = {
     entry: __dirname + '/client/index.tsx',
     output: {
         path: __dirname + '/dist',
-        filename: 'resume_bundle.js'
+        filename: 'story-picker-bundle.js'
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".json"]

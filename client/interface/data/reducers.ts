@@ -3,7 +3,11 @@ import { DataAction, DataState } from './interface';
 
 export const baseDataState: DataState = {
     storyTypes: [],
-    settings: []
+    settings: [],
+    plotPoints: [],
+    selectedStoryType: [],
+    selectedSetting: [],
+    selectedPlotPoints: [],
 }
 
 const dataReducer = (state = baseDataState, action: DataAction) => {
@@ -11,13 +15,33 @@ const dataReducer = (state = baseDataState, action: DataAction) => {
         case types.LOAD_STORY_TYPES: 
             return {
                 ...state,
-                storyTypes: action.payload.storyTypes
+                storyTypes: action.payload
             };
         case types.LOAD_SETTINGS:
             return {
                 ...state,
-                settings: action.payload.settings
+                settings: action.payload
             };
+        case types.LOAD_PLOT_POINTS:
+            return {
+                ...state,
+                plotPoints: action.payload
+            };
+        case types.SELECT_STORY_TYPE:
+            return {
+                ...state,
+                selectedStoryType: action.selected
+            }
+        case types.SELECT_SETTING:
+            return {
+                ...state,
+                selectedSetting: action.selected
+            }
+        case types.SELECT_PLOT_POINT:
+            return {
+                ...state,
+                selectedPlotPoints: action.selected
+            }
         default:
             return state;
     }

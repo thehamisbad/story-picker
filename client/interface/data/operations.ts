@@ -17,7 +17,30 @@ const loadSettings = () => (dispatch: Dispatch<any>) => {
         });
 }
 
+const loadPlotPoints = () => (dispatch: Dispatch<any>) => {
+    axios.get('http://localhost:3000/data/plot-points')
+        .then((response: AxiosResponse<string[]>) => {
+            dispatch(actions.loadPlotPoints(response.data));
+        });
+}
+
+const selectStoryType = (storyType: string[]) => (dispatch: Dispatch<any>) => {
+    dispatch(actions.selectStoryType(storyType));
+}
+
+const selectSetting = (setting: string[]) => (dispatch: Dispatch<any>) => {
+    dispatch(actions.selectSetting(setting));
+}
+
+const selectPlotPoint = (plotPoint: string[]) => (dispatch: Dispatch<any>) => {
+    dispatch(actions.selectPlotPoint(plotPoint));
+}
+
 export default {
     loadStoryTypes,
     loadSettings,
+    loadPlotPoints,
+    selectStoryType,
+    selectSetting,
+    selectPlotPoint,
 };

@@ -1,0 +1,9 @@
+.Picker {
+    border: 1px solid green;
+    border-radius: 10px;
+    margin: 0 0 10px;
+
+    &:last-child {
+        margin: 0;
+    }
+}
