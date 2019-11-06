@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Modal from '../Modal/Modal';
+import PickedChoice from './PickedChoice';
 const classnames = require('classnames');
 
 import './picker.scss';
-import { buildSelectedChoices } from '../../utils/selectedChoices';
 
 export interface DropdownProps {
     title: string;
@@ -45,12 +45,15 @@ class Picker extends React.Component<DropdownProps> {
         return (
             <div className='Picker-choiceModal'>
                 <div className='Picker-currentChoiceWrapper'>
-                    <p className='Picker-currentChoice'>
-                        Current Choice: <span>{ buildSelectedChoices }</span>
-                    </p>
+                    <div className='Picker-currentChoice'>
+                        Current Choice: 
+                        <span>
+                            <PickedChoice selected={ this.props.selected } upTo={ this.props.upTo } />
+                        </span>
+                    </div>
                     <button 
-                    className='Picker-clear primary'
-                    onClick={ () => this.clearChoice() }
+                        className='Picker-clear primary'
+                        onClick={ () => this.clearChoice() }
                     >
                         Clear
                     </button>

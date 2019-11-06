@@ -1,18 +1,21 @@
 import * as React from 'react';
 import Picker from './components/Picker/Picker'
+import PickedChoice from './components/Picker/PickedChoice';
 import operaitons from './interface/data/operations';
 
 import './index.scss';
 import './storyPicker.scss';
-import { buildSelectedChoices } from './utils/selectedChoices';
 
-export interface StoryPickerProps {
+interface StoryPickerVariables {
     storyTypes: string[];
     settings: string[];
     plotPoints: string[];
     selectedStoryType: string[];
     selectedSetting: string[];
     selectedPlotPoints: string[];
+}
+
+interface StoryPickerFunctions {
     loadStoryTypes: () => void;
     loadSettings: () => void;
     loadPlotPoints: () => void;
@@ -24,12 +27,21 @@ export interface StoryPickerProps {
     clearPlotPoint: () => void;
 }
 
+export interface StoryPickerProps extends StoryPickerVariables, StoryPickerFunctions {
+}
+
 class StoryPicker extends React.Component<StoryPickerProps> {
 
     componentDidMount() {
         this.props.loadStoryTypes();
         this.props.loadSettings();
         this.props.loadPlotPoints();
+    }
+
+    clearChoices() {
+        this.props.clearStoryType();
+        this.props.clearSetting();
+        this.props.clearPlotPoint();
     }
 
     render () {
@@ -70,9 +82,19 @@ class StoryPicker extends React.Component<StoryPickerProps> {
                             />
                         </div>
                         <div className='Pickers-choices'>
-                            <p>{ buildSelectedChoices(this.props.selectedStoryType, 1 ) }</p>
-                            <p>{ buildSelectedChoices(this.props.selectedSetting, 1 ) }</p>
-                            <p>{ buildSelectedChoices(this.props.selectedPlotPoints, 3 ) }</p>
+                            <div className='Pickers-clearChoices'>
+                                <button 
+                                    className='Picker-clear primary'
+                                    onClick={ () => this.clearChoices() }
+                                >
+                                    Clear All
+                                </button>
+                            </div>
+                            <div className='Pickers-selected'>
+                                <div><PickedChoice selected={ this.props.selectedStoryType } upTo={1} /></div>
+                                <div><PickedChoice selected={ this.props.selectedSetting } upTo={1} /></div>
+                                <div><PickedChoice selected={ this.props.selectedPlotPoints } upTo={3} /></div>
+                            </div>
                         </div>
                     </div>
                 </div>
