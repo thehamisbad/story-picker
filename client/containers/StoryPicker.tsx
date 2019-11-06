@@ -22,6 +22,9 @@ const mapDispatchToProps = {
     selectStoryType: operations.selectStoryType,
     selectSetting: operations.selectSetting,
     selectPlotPoint: operations.selectPlotPoint,
+    clearStoryType: operations.clearStoryType,
+    clearSetting: operations.clearSetting,
+    clearPlotPoint: operations.clearPlotPoint,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoryPicker);

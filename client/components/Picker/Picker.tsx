@@ -1,7 +1,9 @@
 import * as React from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
+import Modal from '../Modal/Modal';
+const classnames = require('classnames');
 
 import './picker.scss';
+import { buildSelectedChoices } from '../../utils/selectedChoices';
 
 export interface DropdownProps {
     title: string;
@@ -10,36 +12,12 @@ export interface DropdownProps {
     items: string[];
     id: string;
     choose: (choice: string[]) => void;
+    clear: () => void;
 }
-
-const random = 'Random!';
 
 class Picker extends React.Component<DropdownProps> {
 
-    buildDropdownItems() {
-        return this.props.items.map(
-            (item, index) => (
-                <Dropdown.Item 
-                    key={ [this.props.id, index].join('-') } 
-                    eventKey={item}
-                >
-                    {item}
-                </Dropdown.Item>
-            )
-        );
-    }
-
-    buildSelectedItems() {
-        if (this.props.selected == undefined 
-                || this.props.selected.length < 1) {
-            return (<p>{ random }</p>);
-        }
-        return this.props.upTo > 1 ?
-            (<ol>{ this.props.selected.map(item => (<li>{item}</li>)) }</ol>) :
-            (<p>{ this.props.selected }</p>);
-    }
-
-    onSelect(value: string) {
+    selectChoice(value: string) {
         const newSelected: string[] = [].concat(this.props.selected);
         newSelected.push(value);
         if (newSelected.length > this.props.upTo) {
@@ -50,20 +28,45 @@ class Picker extends React.Component<DropdownProps> {
         }
     }
 
+    clearChoice() {
+        this.props.clear();
+    }
+
+    buildChoices() {
+        const choices = this.props.items.map((item, index) => (
+            <li 
+                className={classnames('Picker-choice', this.props.selected.includes(item) ? 'selected' : '') } 
+                onClick={ () => this.selectChoice(item)}
+                key={[item, index].join('-')}
+            >
+                <p className='Picker-choiceWrapper'>{ item }</p>
+            </li>
+        ));
+        return (
+            <div className='Picker-choiceModal'>
+                <div className='Picker-currentChoiceWrapper'>
+                    <p className='Picker-currentChoice'>
+                        Current Choice: <span>{ buildSelectedChoices }</span>
+                    </p>
+                    <button 
+                    className='Picker-clear primary'
+                    onClick={ () => this.clearChoice() }
+                    >
+                        Clear
+                    </button>
+                </div>
+                <ul className='Picker-choices'>
+                    { choices }
+                </ul>
+            </div>
+        )
+    }
+
     render() {
-        const dropdownItems = this.buildDropdownItems();
-        const selectedItems = this.buildSelectedItems();
+        const choices = this.buildChoices();
         return (
             <div className='Picker'>
-                <Dropdown onSelect={ this.onSelect.bind(this) }>
-                    <Dropdown.Toggle id={ this.props.id }>
-                        { this.props.title }
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        { dropdownItems }
-                    </Dropdown.Menu>
-                </Dropdown>
-                { selectedItems }
+                <Modal content={ choices } buttonText={ this.props.title }/>
             </div>
         )
     }

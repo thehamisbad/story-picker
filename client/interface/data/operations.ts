@@ -36,6 +36,18 @@ const selectPlotPoint = (plotPoint: string[]) => (dispatch: Dispatch<any>) => {
     dispatch(actions.selectPlotPoint(plotPoint));
 }
 
+const clearStoryType = () => (dispatch: Dispatch<any>) => {
+    dispatch(actions.selectStoryType([]));
+}
+
+const clearSetting = () => (dispatch: Dispatch<any>) => {
+    dispatch(actions.selectSetting([]));
+}
+
+const clearPlotPoint = () => (dispatch: Dispatch<any>) => {
+    dispatch(actions.selectPlotPoint([]));
+}
+
 export default {
     loadStoryTypes,
     loadSettings,
@@ -43,4 +55,7 @@ export default {
     selectStoryType,
     selectSetting,
     selectPlotPoint,
+    clearStoryType,
+    clearSetting,
+    clearPlotPoint,
 };

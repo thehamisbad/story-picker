@@ -1,9 +1,70 @@
 .Picker {
-    border: 1px solid green;
     border-radius: 10px;
-    margin: 0 0 10px;
+    min-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #026F1A;
+    padding: 10px;
+}
 
-    &:last-child {
+.Picker-selectedItems {
+    padding: 10px;
+
+    ol {
         margin: 0;
+    }
+}
+
+.Picker-choices {
+    display: flex;
+    flex-wrap: wrap; 
+    list-style: none;
+    padding: 2em;
+    margin: 0;
+}
+
+.Picker-choice {
+    background-color: #6FD084;
+    border: 1px solid #026F1A;
+    border-radius: 5px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+
+    &.selected {
+        background-color: rgba(#6FD084, 0.4);
+        box-shadow: 0 0 10px 5px #DE77AA;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: rgba(#6FD084, 0.4);
+        box-shadow: 0 0 10px 5px #DE77AA;
+    }
+}
+
+.Picker-choiceWrapper {
+    margin: auto;
+    text-align: center;
+    line-height: 1;
+}
+
+.Picker-currentChoiceWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Picker-currentChoice {
+    margin: auto 0;
+
+    span {
+        font-weight: 700;
     }
 }

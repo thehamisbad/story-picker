@@ -11,6 +11,7 @@ export const baseDataState: DataState = {
 }
 
 const dataReducer = (state = baseDataState, action: DataAction) => {
+    console.log(action);
     switch (action.type) {
         case types.LOAD_STORY_TYPES: 
             return {
