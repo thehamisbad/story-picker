@@ -1,11 +1,19 @@
 import * as React from 'react';
 
+export interface Choice {
+    id: number;
+    label: string;
+}
+
 export interface PickedChoiceProperties {
-    selected: string[];
+    selected: Choice[];
     upTo: number;
 }
 
-const random = 'Random!';
+const random = {
+    id: 0, 
+    label: 'Random!'
+};
 
 class PickedChoice extends React.Component<PickedChoiceProperties> {
 
@@ -17,9 +25,9 @@ class PickedChoice extends React.Component<PickedChoiceProperties> {
         return this.props.upTo > 1 ?
             (<ol>
                 { display.map((item, index) =>
-                    (<li key={[item, index].join('-')}>{item}</li>)) }
+                    (<li key={[item.id, index].join('-')}>{ item.label }</li>)) }
             </ol>) :
-            display[0];
+            display[0].label;
     }
 }
 

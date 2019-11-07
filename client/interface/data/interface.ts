@@ -1,14 +1,26 @@
 export interface DataAction {
     type: string;
-    payload: string[];
-    selected: string[];
+    payload: Data[];
+    selected: Data[];
 }
 
 export interface DataState {
-    storyTypes: string[];
-    settings: string[];
-    plotPoints: string[];
-    selectedStoryType: string[];
-    selectedSetting: string[];
-    selectedPlotPoints: string[];
+    storyTypes: Data[];
+    settings: Data[];
+    plotPoints: Data[];
+    selectedStoryType: Data[];
+    selectedSetting: Data[];
+    selectedPlotPoints: Data[];
+}
+
+export interface Data {
+    id: number;
+    label: string;
+    type?: string;
+}
+
+export interface SelectedStoryProps {
+    storyType: Data[];
+    setting: Data[];
+    plotPoints: Data[];
 }

@@ -1,12 +1,42 @@
 [
-    "Short Story",
-    "Novel",
-    "DnD Campaign",
-    "Ghost Story",
-    "Fable",
-    "Historical Account",
-    "TV Show",
-    "Movie",
-    "Comic Book",
-    "Play"
+    {
+        "id": 1,
+        "label": "Short Story"
+    },
+    {
+        "id": 2,
+        "label": "Novel"
+    },
+    {
+        "id": 3,
+        "label": "DnD Campaign"
+    },
+    {
+        "id": 4,
+        "label": "Ghost Story"
+    },
+    {
+        "id": 5,
+        "label": "Fable"
+    },
+    {
+        "id": 6,
+        "label": "Historical Account"
+    },
+    {
+        "id": 7,
+        "label": "TV Show"
+    },
+    {
+        "id": 8,
+        "label": "Movie"
+    },
+    {
+        "id": 9,
+        "label": "Comic Book"
+    },
+    {
+        "id": 10,
+        "label": "Play"
+    }
 ]

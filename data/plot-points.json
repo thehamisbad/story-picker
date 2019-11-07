@@ -1,33 +1,126 @@
 [
-    "Character with a mysterious past",
-    "It's all a dream",
-    "Parental figure dies",
-    "Main character dies",
-    "Entire story takes place in one day",
-    "Character is kidnapped",
-    "Technology takes over",
-    "Person vs. Self",
-    "Person vs. Society",
-    "Person vs. God",
-    "Person vs. Technology",
-    "Person vs. Person",
-    "Person vs. Nature",
-    "Person vs. Fate",
-    "Happy Ending",
-    "Only animals can talk",
-    "High Magic",
-    "Low Magic",
-    "High Technology",
-    "Low Technology",
-    "Main character is minority",
-    "Main character is majority",
-    "No Romance",
-    "Platonic Romance (Bromance)",
-    "Major character is Elderly",
-    "Major character is Middle Aged",
-    "Major character is Teen",
-    "Major character is a child",
-    "Demonic Possession",
-    "Character is the chosen one",
-    "Character dealing with anxiety"
+    {
+        "id": 1,
+        "label": "Character with a mysterious past"
+    },
+    {
+        "id": 2,
+        "label": "It's all a dream"
+    },
+    {
+        "id": 3,
+        "label": "Parental figure dies"
+    },
+    {
+        "id": 4,
+        "label": "Main character dies"
+    },
+    {
+        "id": 5,
+        "label": "Entire story takes place in one day"
+    },
+    {
+        "id": 6,
+        "label": "Character is kidnapped"
+    },
+    {
+        "id": 7,
+        "label": "Technology takes over"
+    },
+    {
+        "id": 8,
+        "label": "Person vs. Self"
+    },
+    {
+        "id": 9,
+        "label": "Person vs. Society"
+    },
+    {
+        "id": 10,
+        "label": "Person vs. God"
+    },
+    {
+        "id": 11,
+        "label": "Person vs. Technology"
+    },
+    {
+        "id": 12,
+        "label": "Person vs. Person"
+    },
+    {
+        "id": 13,
+        "label": "Person vs. Nature"
+    },
+    {
+        "id": 14,
+        "label": "Person vs. Fate"
+    },
+    {
+        "id": 15,
+        "label": "Happy Ending"
+    },
+    {
+        "id": 16,
+        "label": "Only animals can talk"
+    },
+    {
+        "id": 17,
+        "label": "High Magic"
+    },
+    {
+        "id": 18,
+        "label": "Low Magic"
+    },
+    {
+        "id": 19,
+        "label": "High Technology"
+    },
+    {
+        "id": 20,
+        "label": "Low Technology"
+    },
+    {
+        "id": 21,
+        "label": "Main character is minority"
+    },
+    {
+        "id": 22,
+        "label": "Main character is majority"
+    },
+    {
+        "id": 23,
+        "label": "No Romance"
+    },
+    {
+        "id": 24,
+        "label": "Platonic Romance (Bromance)"
+    },
+    {
+        "id": 25,
+        "label": "Major character is Elderly"
+    },
+    {
+        "id": 26,
+        "label": "Major character is Middle Aged"
+    },
+    {
+        "id": 27,
+        "label": "Major character is Teen"
+    },
+    {
+        "id": 28,
+        "label": "Major character is a child"
+    },
+    {
+        "id": 29,
+        "label": "Demonic Possession"
+    },
+    {
+        "id": 30,
+        "label": "Character is the chosen one"
+    },
+    {
+        "id": 31,
+        "label": "Character dealing with anxiety"
+    }
 ]

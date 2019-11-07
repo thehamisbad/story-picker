@@ -64,10 +64,20 @@ button {
     &.primary {
         background-color: #B72C70;
 
-    &:hover,
-    &:focus,
-    &:active {
-        background-color: #CA4C8A;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: #CA4C8A;
+        }
     }
+
+    &.secondary {
+        background-color: #28A744;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: #45B85E;
+        }
     }
 }

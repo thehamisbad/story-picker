@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { GlobalState } from '../interface/global';
-import StoryPicker from '../StoryPicker';
+import StoryPicker from '../components/StoryPicker/StoryPicker';
 import operations from '../interface/data/operations';
 
 function mapStateToProps(state: GlobalState) {

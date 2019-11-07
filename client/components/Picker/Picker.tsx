@@ -1,24 +1,24 @@
 import * as React from 'react';
 import Modal from '../Modal/Modal';
-import PickedChoice from './PickedChoice';
+import PickedChoice, { Choice } from './PickedChoice';
 const classnames = require('classnames');
 
 import './picker.scss';
 
 export interface DropdownProps {
     title: string;
-    selected: string[];
+    selected: Choice[];
     upTo: number;
-    items: string[];
+    items: Choice[];
     id: string;
-    choose: (choice: string[]) => void;
+    choose: (choice: Choice[]) => void;
     clear: () => void;
 }
 
 class Picker extends React.Component<DropdownProps> {
 
-    selectChoice(value: string) {
-        const newSelected: string[] = [].concat(this.props.selected);
+    selectChoice(value: Choice) {
+        const newSelected: Choice[] = [].concat(this.props.selected);
         newSelected.push(value);
         if (newSelected.length > this.props.upTo) {
             this.props.choose(newSelected.slice(1, newSelected.length));
@@ -33,13 +33,13 @@ class Picker extends React.Component<DropdownProps> {
     }
 
     buildChoices() {
-        const choices = this.props.items.map((item, index) => (
+        const choices = this.props.items.map(item => (
             <li 
                 className={classnames('Picker-choice', this.props.selected.includes(item) ? 'selected' : '') } 
                 onClick={ () => this.selectChoice(item)}
-                key={[item, index].join('-')}
+                key={[this.props.id, item.id].join('-')}
             >
-                <p className='Picker-choiceWrapper'>{ item }</p>
+                <p className='Picker-choiceWrapper'>{ item.label }</p>
             </li>
         ));
         return (
@@ -69,7 +69,8 @@ class Picker extends React.Component<DropdownProps> {
         const choices = this.buildChoices();
         return (
             <div className='Picker'>
-                <Modal content={ choices } buttonText={ this.props.title }/>
+                <div className='Picker-title'>{ this.props.title }</div>
+                <Modal content={ choices } buttonText='Pick!'/>
             </div>
         )
     }

@@ -1,12 +1,13 @@
 import types from './types';
+import { Data } from './interface';
 
-const loadStoryTypes = (storyTypes: string[]) => createAction(types.LOAD_STORY_TYPES, storyTypes);
+const loadStoryTypes = (storyTypes: Data[]) => createAction(types.LOAD_STORY_TYPES, storyTypes);
 
-const loadSettings = (settings: string[]) => createAction(types.LOAD_SETTINGS, settings);
+const loadSettings = (settings: Data[]) => createAction(types.LOAD_SETTINGS, settings);
 
-const loadPlotPoints = (plotPoints: string[]) => createAction(types.LOAD_PLOT_POINTS, plotPoints);
+const loadPlotPoints = (plotPoints: Data[]) => createAction(types.LOAD_PLOT_POINTS, plotPoints);
 
-function createAction(type: string, payload?: string[], selected?: string[]) {
+function createAction(type: string, payload?: string[] | Data[], selected?: Data[]) {
     return {
         type,
         payload,
@@ -14,11 +15,11 @@ function createAction(type: string, payload?: string[], selected?: string[]) {
     }
 }
 
-const selectStoryType = (storyType: string[]) => createAction(types.SELECT_STORY_TYPE, [], storyType);
+const selectStoryType = (storyType: Data[]) => createAction(types.SELECT_STORY_TYPE, [], storyType);
 
-const selectSetting = (setting: string[]) => createAction(types.SELECT_SETTING, [], setting);
+const selectSetting = (setting: Data[]) => createAction(types.SELECT_SETTING, [], setting);
 
-const selectPlotPoint = (plotPoint: string[]) => createAction(types.SELECT_PLOT_POINT, [], plotPoint);
+const selectPlotPoint = (plotPoint: Data[]) => createAction(types.SELECT_PLOT_POINT, [], plotPoint);
 
 export default {
     loadStoryTypes,

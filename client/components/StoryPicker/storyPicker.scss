@@ -1,0 +1,32 @@
+.Pickers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.Pickers-choiceButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 10px 10px;
+}
+
+.Pickers-selected {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.Pickers-choices {
+    border: 1px solid #026F1A;
+    border-radius: 10px;
+}
+
+.Choice {
+    margin: auto 0;
+}
+
+.Choice-label {
+    font-weight: 700;
+}
