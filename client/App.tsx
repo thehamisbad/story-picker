@@ -1,5 +1,6 @@
 import * as React from 'react';
 import StoryPicker from './containers/StoryPicker';
+import Selection from './containers/Selection';
 
 import './index.scss';
 
@@ -12,6 +13,7 @@ class App extends React.Component {
                 </div>
                 <div className='App'>
                     <StoryPicker />
+                    <Selection />
                 </div>
             </div>
         )

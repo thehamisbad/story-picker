@@ -1,7 +1,7 @@
 .Pickers {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
@@ -14,7 +14,7 @@
 .Pickers-selected {
     margin-top: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .Choice {
-    margin: auto 0;
+    margin: auto 100px;
 }
 
 .Choice-label {

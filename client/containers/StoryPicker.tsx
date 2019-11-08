@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { GlobalState } from '../interface/global';
 import StoryPicker from '../components/StoryPicker/StoryPicker';
 import operations from '../interface/data/operations';
+import * as randomOps from '../interface/randomize/operations';
 
 function mapStateToProps(state: GlobalState) {
     return {
@@ -25,6 +26,7 @@ const mapDispatchToProps = {
     clearStoryType: operations.clearStoryType,
     clearSetting: operations.clearSetting,
     clearPlotPoint: operations.clearPlotPoint,
+    randomize: randomOps.default.randomize,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(StoryPicker);

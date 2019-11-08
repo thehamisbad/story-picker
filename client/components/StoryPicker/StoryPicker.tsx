@@ -2,6 +2,7 @@ import * as React from 'react';
 import Picker from '../Picker/Picker'
 import PickedChoice from '../Picker/PickedChoice';
 import { Data } from '../../interface/data/interface';
+import { RandomRequest } from '../../interface/randomize/interface';
 
 import './storyPicker.scss';
 
@@ -24,6 +25,7 @@ interface StoryPickerFunctions {
     clearStoryType: () => void;
     clearSetting: () => void;
     clearPlotPoint: () => void;
+    randomize: (randomReq: RandomRequest) => void;
 }
 
 export interface StoryPickerProps extends StoryPickerVariables, StoryPickerFunctions {
@@ -59,22 +61,25 @@ class StoryPicker extends React.Component<StoryPickerProps> {
         )
     }
 
-    randomize() {
-
-    }
-
-    selectRandom(selected: Data[], choices: Data[], upTo: number) {
-        if (selected.length === upTo) {
-            return selected;
-        }
-        const randomSelections = [].concat(selected);
-        while (randomSelections.length < upTo) {
-            const random = choices[Math.floor(Math.random() * choices.length)]
-            if (!randomSelections.includes(random)) {
-                randomSelections.push(random);
-            }
-        }
-        return randomSelections;
+    randomize(ammount = 1) {
+        this.props.randomize({
+            ammount,
+            storyType: {
+                selected: this.props.selectedStoryType,
+                choices: this.props.storyTypes,
+                upTo: STORY_TYPE_LIMIT
+            },
+            setting: {
+                selected: this.props.selectedSetting,
+                choices: this.props.settings,
+                upTo: SETTING_LIMIT
+            },
+            plotPoint: {
+                selected: this.props.selectedPlotPoints,
+                choices: this.props.plotPoints,
+                upTo: PLOT_POINT_LIMIT
+            },
+        });
     }
 
     render () {

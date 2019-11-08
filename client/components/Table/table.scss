@@ -1,0 +1,27 @@
+.Table-wrapper {
+    overflow-x: scroll;
+    position: relative;
+}
+
+table { 
+    table-layout: fixed;
+    background-color: #6FD084;
+    border: 2px solid #026F1A;
+    min-width: 100%;
+}
+
+th {
+    white-space: nowrap;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    min-width: 200px;
+}
+
+td {
+    border: 2px solid #026F1A;
+    border-left: none;
+    border-right: none;
+}
