@@ -27,3 +27,5 @@ export interface RandomArguments {
     choices: Data[];
     upTo: number;
 }
+
+export const CHOOSE_TWO_ID = 0;

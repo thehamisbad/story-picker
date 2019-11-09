@@ -2,7 +2,7 @@ import * as React from 'react';
 import Picker from '../Picker/Picker'
 import PickedChoice from '../Picker/PickedChoice';
 import { Data } from '../../interface/data/interface';
-import { RandomRequest } from '../../interface/randomize/interface';
+import { RandomRequest, CHOOSE_TWO_ID } from '../../interface/randomize/interface';
 import { Dropdown } from 'react-bootstrap';
 
 import './storyPicker.scss';
@@ -74,6 +74,14 @@ class StoryPicker extends React.Component<StoryPickerProps, StoryPickerState> {
         )
     }
 
+    addCombineOption(data: Data[]) {
+        const choices = [{
+            id: CHOOSE_TWO_ID,
+            label: 'Combine 2 choices'
+        }]
+        return choices.concat(data);
+    }
+
     randomize() {
         const ammount = this.state.numToGenerate;
         this.props.randomize({
@@ -85,7 +93,7 @@ class StoryPicker extends React.Component<StoryPickerProps, StoryPickerState> {
             },
             setting: {
                 selected: this.props.selectedSetting,
-                choices: this.props.settings,
+                choices: this.addCombineOption(this.props.settings),
                 upTo: SETTING_LIMIT
             },
             plotPoint: {
@@ -133,7 +141,7 @@ class StoryPicker extends React.Component<StoryPickerProps, StoryPickerState> {
                         title={ SETTING }
                         selected={ this.props.selectedSetting }
                         upTo={ SETTING_LIMIT }
-                        items={ this.props.settings } 
+                        items={ this.addCombineOption(this.props.settings) } 
                         id='setting-picker'
                         choose={ this.props.selectSetting }
                         clear={ this.props.clearSetting }
