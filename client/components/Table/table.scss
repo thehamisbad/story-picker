@@ -39,6 +39,7 @@ tr {
     display: inline-block;
     position: relative;
     height: 100%;
+    cursor: pointer;
 
     &:before,
     &:after {
@@ -59,15 +60,19 @@ tr {
         content: '\25BE';
     }
 
-    &.sorted-up {
-        &:after {
-            content: '';
+    &.sorted {
+        text-decoration: underline;
+        
+        &.up {
+            &:after {
+                content: '';
+            }
         }
-    }
 
-    &.sorted-down {
-        &:before {
-            content: '';
+        &.down {
+            &:before {
+                content: '';
+            }
         }
     }
 }

@@ -37,7 +37,7 @@ class SortableTable<E> extends Table<E> {
                                     classnames(
                                         column.sort ? 'sortable' : '',
                                         this.state.sortColumn && column.id === this.state.sortColumn.id ? 
-                                            this.state.ascending ? 'sorted-up' : 'sorted-down' 
+                                            this.state.ascending ? 'sorted up' : 'sorted down' 
                                             : '',
                                     )
                                 }
