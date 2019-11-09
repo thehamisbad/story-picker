@@ -4,7 +4,6 @@ import { Dispatch } from 'react';
 import { Data } from './interface';
 
 const loadStoryTypes = () => (dispatch: Dispatch<any>) => {
-    console.log('loading story types');
     axios.get('http://localhost:3000/data/story-types')
         .then((response: AxiosResponse<Data[]>) => {
             dispatch(actions.loadStoryTypes(response.data));

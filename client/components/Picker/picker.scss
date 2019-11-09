@@ -28,19 +28,19 @@
     list-style: none;
     padding: 2em;
     margin: 0;
+    justify-content: center;
 }
 
 .Picker-choice {
     background-color: #6FD084;
     border: 1px solid #026F1A;
     border-radius: 5px;
-    margin: auto;
+    margin: auto 2px 4px;
     width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 5px;
     transition: background-color 0.3s ease;
     cursor: pointer;
 
@@ -58,7 +58,7 @@
 }
 
 .Picker-choiceWrapper {
-    margin: auto;
+    margin: auto 2px;
     text-align: center;
     line-height: 1;
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import StoryPicker from './containers/StoryPicker';
 import Selection from './containers/Selection';
+import Footer from './components/Footer/Footer';
 
 import './index.scss';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
                     <StoryPicker />
                     <Selection />
                 </div>
+                <Footer />
             </div>
         )
     }

@@ -30,5 +30,37 @@
     {
         "id": 8,
         "label": "Inside a Video Game"
+    },
+    {
+        "id": 9,
+        "label": "Pirate"
+    },
+    {
+        "id": 10,
+        "label": "Voodoo"
+    },
+    {
+        "id": 11,
+        "label": "Desert Island"
+    },
+    {
+        "id": 12,
+        "label": "Bizzaro"
+    },
+    {
+        "id": 13,
+        "label": "Magic School"
+    },
+    {
+        "id": 14,
+        "label": "Circus"
+    },
+    {
+        "id": 15,
+        "label": "Monster Truck Tour"
+    },
+    {
+        "id": 16,
+        "label": "Cult Compound"
     }
 ]

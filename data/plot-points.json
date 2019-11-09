@@ -122,5 +122,221 @@
     {
         "id": 31,
         "label": "Character dealing with anxiety"
+    },
+    {
+        "id": 32,
+        "label": "Bottle Episode"
+    },
+    {
+        "id": 33,
+        "label": "Villain was right all along"
+    },
+    {
+        "id": 34,
+        "label": "Warring Factions"
+    },
+    {
+        "id": 35,
+        "label": "Ticking Clock"
+    },
+    {
+        "id": 36,
+        "label": "Bad Romance"
+    },
+    {
+        "id": 37,
+        "label": "Everything is Terrible"
+    },
+    {
+        "id": 38,
+        "label": "Epic Journey"
+    },
+    {
+        "id": 39,
+        "label": "Missing Heir"
+    },
+    {
+        "id": 40,
+        "label": "Too Many Heirs"
+    },
+    {
+        "id": 41,
+        "label": "Strange Economy"
+    },
+    {
+        "id": 42,
+        "label": "Magic going away"
+    },
+    {
+        "id": 43,
+        "label": "Magic coming back"
+    },
+    {
+        "id": 44,
+        "label": "Person vs. Corporation"
+    },
+    {
+        "id": 45,
+        "label": "Curse"
+    },
+    {
+        "id": 46,
+        "label": "Cursed Object"
+    },
+    {
+        "id": 47,
+        "label": "Artifact of power"
+    },
+    {
+        "id": 48,
+        "label": "Back story"
+    },
+    {
+        "id": 50,
+        "label": "Secret Alien"
+    },
+    {
+        "id": 51,
+        "label": "Secret Monster"
+    },
+    {
+        "id": 52,
+        "label": "Secret Prince/Princess"
+    },
+    {
+        "id": 53,
+        "label": "Secret Witch"
+    },
+    {
+        "id": 54,
+        "label": "Competition"
+    },
+    {
+        "id": 55,
+        "label": "Angry Mob"
+    },
+    {
+        "id": 56,
+        "label": "Too many factions"
+    },
+    {
+        "id": 57,
+        "label": "Secret Society"
+    },
+    {
+        "id": 58,
+        "label": "Brave mook"
+    },
+    {
+        "id": 59,
+        "label": "Cowardly hero"
+    },
+    {
+        "id": 60,
+        "label": "Dance Party"
+    },
+    {
+        "id": 61,
+        "label": "Mascarade ball"
+    },
+    {
+        "id": 62,
+        "label": "Forbidden land"
+    },
+    {
+        "id": 63,
+        "label": "Forbidden building"
+    },
+    {
+        "id": 64,
+        "label": "Magic Item"
+    },
+    {
+        "id": 65,
+        "label": "A bully"
+    },
+    {
+        "id": 66,
+        "label": "A celebrity"
+    },
+    {
+        "id": 67,
+        "label": "Dog god"
+    },
+    {
+        "id": 68,
+        "label": "Animal crime (crime committed by animals)"
+    },
+    {
+        "id": 69,
+        "label": "Subvert the genre"
+    },
+    {
+        "id": 70,
+        "label": "Shopping mall of the damned"
+    },
+    {
+        "id": 71,
+        "label": "The fairest of them all"
+    },
+    {
+        "id": 72,
+        "label": "Creepy child"
+    },
+    {
+        "id": 73,
+        "label": "Creepy dog"
+    },
+    {
+        "id": 74,
+        "label": "Things get weird"
+    },
+    {
+        "id": 75,
+        "label": "Gladitorial Combat"
+    },
+    {
+        "id": 76,
+        "label": "Good times"
+    },
+    {
+        "id": 77,
+        "label": "Bad times"
+    },
+    {
+        "id": 78,
+        "label": "Plan backfires"
+    },
+    {
+        "id": 79,
+        "label": "Plan succeeds when it should not"
+    },
+    {
+        "id": 80,
+        "label": "Benny hill music"
+    },
+    {
+        "id": 81,
+        "label": "Damsel in distress"
+    },
+    {
+        "id": 82,
+        "label": "Himbo in distress"
+    },
+    {
+        "id": 83,
+        "label": "Secret War"
+    },
+    {
+        "id": 84,
+        "label": "Secret dead guy"
+    },
+    {
+        "id": 85,
+        "label": "Small thing saves the world"
+    },
+    {
+        "id": 86,
+        "label": "Big thing saves the world"
     }
 ]

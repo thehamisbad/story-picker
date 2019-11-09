@@ -3,8 +3,10 @@ import Picker from '../Picker/Picker'
 import PickedChoice from '../Picker/PickedChoice';
 import { Data } from '../../interface/data/interface';
 import { RandomRequest } from '../../interface/randomize/interface';
+import { Dropdown } from 'react-bootstrap';
 
 import './storyPicker.scss';
+
 
 interface StoryPickerVariables {
     storyTypes: Data[];
@@ -31,6 +33,10 @@ interface StoryPickerFunctions {
 export interface StoryPickerProps extends StoryPickerVariables, StoryPickerFunctions {
 }
 
+export interface StoryPickerState {
+    numToGenerate: number;
+}
+
 const STORY_TYPE = 'Story Type';
 const STORY_TYPE_LIMIT = 1;
 const SETTING = 'Setting';
@@ -38,7 +44,14 @@ const SETTING_LIMIT = 1;
 const PLOT_POINT = 'Plot Points';
 const PLOT_POINT_LIMIT = 3;
 
-class StoryPicker extends React.Component<StoryPickerProps> {
+class StoryPicker extends React.Component<StoryPickerProps, StoryPickerState> {
+
+    constructor(props: StoryPickerProps) {
+        super(props);
+        this.state = {
+            numToGenerate: 1,
+        };
+    }
 
     componentDidMount() {
         this.props.loadStoryTypes();
@@ -61,7 +74,8 @@ class StoryPicker extends React.Component<StoryPickerProps> {
         )
     }
 
-    randomize(ammount = 1) {
+    randomize() {
+        const ammount = this.state.numToGenerate;
         this.props.randomize({
             ammount,
             storyType: {
@@ -80,6 +94,26 @@ class StoryPicker extends React.Component<StoryPickerProps> {
                 upTo: PLOT_POINT_LIMIT
             },
         });
+    }
+
+    changeNumberGenerated(key: string) {
+        this.setState({ numToGenerate: parseInt(key) });
+    }
+
+    randomChoiceDropdown() {
+        const items = new Array(10).fill('item');
+        return (
+            <Dropdown onSelect={ this.changeNumberGenerated.bind(this) }>
+                <Dropdown.Toggle id='generate-random-choices'>
+                    { this.state.numToGenerate }
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    { items.map((_value, index) => (
+                        <Dropdown.Item key={'random-choice-' + index} eventKey={[index + 1].join('')}>{ index + 1 }</Dropdown.Item>
+                    ))}
+                </Dropdown.Menu>
+            </Dropdown>
+        );
     }
 
     render () {
@@ -121,6 +155,7 @@ class StoryPicker extends React.Component<StoryPickerProps> {
                         { this.displayChoice(PLOT_POINT, this.props.selectedPlotPoints, PLOT_POINT_LIMIT)}
                     </div>
                     <div className='Pickers-choiceButtons'>
+                        { this.randomChoiceDropdown() }
                         <button
                             className="Picker-randomize secondary"
                             onClick={ () => this.randomize() }

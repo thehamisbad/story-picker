@@ -9,14 +9,37 @@ export interface TableProps<E> {
     columns: TableColumn<E>[];
 }
 
-class Table<E> extends React.Component<TableProps<E>> {
+export interface TableState<E> {
+    data: E[];
+    sortColumn?: TableColumn<E> | null;
+    ascending?: boolean;
+}
+
+class Table<E> extends React.Component<TableProps<E>, TableState<E>> {
+
+    constructor(props: TableProps<E>) {
+        super(props);
+        this.state = {
+            data: [],
+        }
+    }
+
+    componentDidMount() {
+        this.setState({ data: this.props.data });
+    }
+
+    componentDidUpdate(prevProps: TableProps<E>) {
+        if(this.props !== prevProps) {
+            this.setState({ data: this.props.data });
+        }
+    }
 
     buildHeader() {
         return (
             <thead>
-            <tr>
-                { this.props.columns.map(column => (<th key={ [this.props.id,column.heading].join('-') }>{ column.heading }</th>)) }
-            </tr>
+                <tr>
+                    { this.props.columns.map(column => (<th key={ [this.props.id,column.heading].join('-') }>{ column.heading }</th>)) }
+                </tr>
             </thead>
         )
     }
@@ -27,7 +50,9 @@ class Table<E> extends React.Component<TableProps<E>> {
                 <table className='Table'>
                     { this.buildHeader() }
                     <tbody>
-                        { this.props.data.map((element, index) => (<Row key={[this.props.id, index].join('-')} data={ element } columns={ this.props.columns }/>))}
+                        { this.state.data.map((element, index) => (
+                            <Row key={[this.props.id, index].join('-')} index={ index } data={ element } columns={ this.props.columns }/>
+                        ))}
                     </tbody>
                 </table>
             </div>

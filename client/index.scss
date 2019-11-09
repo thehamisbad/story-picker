@@ -31,7 +31,7 @@ body {
     background: #FFFFFF;
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .App-heading {
@@ -42,7 +42,7 @@ body {
     background-color: green;
 }
 
-
+.btn,
 button {
     background-color: #DD8735;
     color: white;
@@ -54,6 +54,7 @@ button {
     border-radius: 6px;
     transition: background-color 0.3s ease;
     padding: 10px;
+    margin: 10px 5px;
 
     &:hover,
     &:focus,
@@ -78,6 +79,23 @@ button {
         &:focus,
         &:active {
             background-color: #45B85E;
+        }
+    }
+}
+
+//Don't do this, overriding bootstrap
+.dropdown {
+    .btn-primary {
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: #F3A65C !important;
+        }
+    }
+
+    .dropdown-item {
+        &:hover {
+            background-color: #F3A65C;
         }
     }
 }
