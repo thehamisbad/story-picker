@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node -r esm ./server/server.js",
     "client": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --env.NODE_ENV=production --mode production",
     "lint": "./node_modules/.bin/eslint ./client/index.tsx",
     "lint:fix": "./node_modules/.bin/eslint ./client/index.tsx --fix"
   },
