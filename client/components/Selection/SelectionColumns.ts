@@ -3,7 +3,6 @@ import { Data } from '../../interface/data/interface';
 
 function displayData(data: Data[]) {
     const items: string[] = [];
-    console.log(data);
     data.forEach(d => items.push(d.label));
     return items.join(', ');
 }
