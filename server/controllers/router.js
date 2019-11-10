@@ -7,7 +7,7 @@ router.use(express.static('dist'));
 router.use('/data', data);
 
 router.get('/', (req, res) => {
-    res.send('../../client/index.html');
+    res.render('layout');
 });
 
 module.exports = router;

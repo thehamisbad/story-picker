@@ -46,7 +46,7 @@ class Table<E> extends React.Component<TableProps<E>, TableState<E>> {
 
     render() {
         return (
-            <div className='Table-wrapper'>
+            <div className='Table-wrapper'  id={ this.props.id }>
                 <table className='Table'>
                     { this.buildHeader() }
                     <tbody>
